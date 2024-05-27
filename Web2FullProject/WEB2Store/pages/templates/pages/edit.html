@@ -1,0 +1,10 @@
+{% block 'title' %}Edit: {{ post.title }}{% endblock %}
+{% block 'content' %}
+<a href="{% url 'pages:home' %}">Home</a>
+<h1>Edit an article</h1>
+<form action="{% url 'pages:update' post.id %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Update">
+</form>
+{% endblock %}

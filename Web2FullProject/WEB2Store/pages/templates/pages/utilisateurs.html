@@ -1,0 +1,7 @@
+{% block 'title' %}{{ post.title }}{% endblock %}
+{% block 'content' %}
+<a href="{% url 'pages:home' %}">Home</a>
+<p>ID_USER: <em>{{ post.password }}</em></p>
+<h1>{{ post.User_name }}</h1>
+<h1>{{ post.Adress_of_the_User }}</h1>
+{% endblock %}

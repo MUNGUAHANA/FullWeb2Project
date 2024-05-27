@@ -1,0 +1,42 @@
+{% load static %}
+<link rel="stylesheet" href="/static/css/base.css" type="text/css">
+<link rel="icon" href="{% static 'img/favicon.png' %}">
+{% block 'title' %}User Login{% endblock %}
+
+{% block 'content' %}
+<main>
+	<h1 style="color:aliceblue; text-align:center;">Account Login</h1>
+	{% if user.is_authenticated %}
+	<p style=" text-align:center;color:aliceblue;">You are already logged in. 
+		<a href="{% url 'accounts:profile' %}"  style=" text-align:center;">Go to Profile</a>
+	</p>
+	{% if user.is_authenticated %}
+        <h2 style="color:yellow;text-align:center;" >Welcome {{ user.first_name }}!</h2>
+    {% else %}
+        <h2 style="color:yellow;text-align:center;"> Welcome Guest!</h2>
+    {% endif %}
+
+	{% else %}
+	<form class="forLogin" action="{% url 'login' %}" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+        <div class="buttons">
+            <p>
+                <input style="color:white; border:5px; background:green;" type="submit" value="Login">
+            </p>
+            <p>
+                <a href="{% url 'accounts:create' %}">
+                    <input  style="color:white; border:5px; background:blue;" type="button" value="Create Account">
+                </a>
+            </p>
+            <p>
+                <a href="{% url 'password_reset' %}">
+                    <input  style="color:white; border:5px; background:black;" type="button" value="Forgot Password?">
+                </a>
+            </p>
+        </div>
+	</form>
+	{% endif %}
+</main>
+{% endblock %}
+

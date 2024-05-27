@@ -1,0 +1,80 @@
+body{
+    background-color:black;
+}
+.welcome{
+    color:aliceblue; text-align:center;
+}
+.homeForm{
+    margin:20px auto; display:grid; place-items: center; padding:100px; font-weight:bold;
+            border: 1px solid ;background-color:rgb(29, 29, 88); width:600px; height:250px;
+}
+.homeForm1{
+    margin:20px auto; display:grid; place-items: center; padding:100px; font-weight:bold;
+            border: 1px solid ;background-color:rgb(95, 141, 109); width:600px; height:250px;
+}
+input{
+border:2px solid; border-radius:5px; background-color:black; color:white;
+}
+.body1{
+    background:rgb(29, 29, 88);
+}
+.navbar{
+    text-align: left; color:white; border:10px solid black;background:black;
+     margin:10px; padding:10px;
+}
+.links{
+    color: black;
+}
+.body2{
+    background-color:rgb(29, 29, 88);
+}
+.TABLEAU{
+    border-collapse:collapse; width:700px; margin:20px;
+    background-color: rgb(29, 29, 88);border:1px solid; padding:5px;
+     text-align:center; color:white;
+    width:600px; height:200px; position: absolute; left:50px; right: 50px;
+    transform: translate(45%,35%);
+}
+content{
+    background-color: rgb(0, 0, 0);
+}
+
+.forLogin{
+    margin:20px auto; display:grid; place-items: center; 
+    font-weight:bold;
+            border: 1px solid ;background-color:rgb(95, 141, 109); width:600px; height:250px;
+            border-radius: 5%;
+}
+.buttons{
+    display:flex; place-items: center; 
+    gap: 6%;
+}
+.profil{
+    color: aliceblue;
+    background-color: cadetblue;
+    border-radius: 30%;
+    place-items: center; 
+    text-align:center;
+    width: 300px;
+    height: 350px;
+    margin-left: 450px;
+}
+.createCompte{
+    color: aliceblue;
+    background-color: rgb(62, 78, 78);
+    border-radius: 10%;
+    margin-left: 300px;
+    width: 700px;
+    height: 400px;
+    
+}
+.buy{
+    color: aliceblue;
+    background-color: rgb(13, 36, 36);
+    border-radius: 30%;
+    place-items: center; 
+    text-align:center;
+    width: 300px;
+    height: 350px;
+    margin-left: 450px;
+}

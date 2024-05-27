@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="/static/css/base.css" type="text/css">
+<link rel="icon" href="{% static 'img/favicon.png' %}">
+{% block 'title' %}Create Account{% endblock %}
+{% block 'content' %}
+<main class="createCompte">
+	<h1 style="text-align:center;">Create an Account</h1>
+
+	<form action="{% url 'accounts:create' %}" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+
+		<p style="text-align:center; ">
+			<input  style="background:blue;" style="text-align:center; " type="submit" value="Create">
+		</p>
+		<p style="text-align:center; ">
+			<a  href="{% url 'login' %}">
+				<input style="background:red;" type="button" value="Cancel">
+			</a>
+		</p>
+	</form>
+</main>
+{% endblock %}
+

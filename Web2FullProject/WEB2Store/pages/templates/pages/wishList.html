@@ -1,0 +1,19 @@
+<!DOCTYPE html> 
+<html>
+     <head> 
+         <title>Wishlist</title>
+     </head>
+     <body> 
+         <h1>Wishlist</h1> 
+         <ul> {% for item in wishlist_items %} 
+             <li>{{ item.product.name }}</li> 
+        {% endfor %} </ul> 
+        <button type="button" onclick="sendViaWhatsApp()">Send via WhatsApp</button> 
+        <button type="button" onclick="sendViaEmail()">Send via Email</button>
+    <script> 
+        function sendViaWhatsApp() {  alert("Sharing via WhatsApp is not currently implemented."); } 
+        function sendViaEmail() {  alert("Sharing via Email is not currently implemented."); } 
+    </script> 
+</body>
+
+</html> 

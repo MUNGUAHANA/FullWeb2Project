@@ -1,0 +1,107 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/base.css" type="text/css">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+    <title>Products</title>
+</head>
+<body class="body2">
+    <a style=" font-size:20px; border-radius:5px;
+    background-color:green; color:black; " href="{% url 'pages:home' %}">Back</a>
+    <a style=" font-size:20px; border-radius:5px;
+    background-color:blue; color:black; " href="{% url 'pages:addNewProduct' %}">Add a product</a>
+    <h1 style="color:aliceblue; text-align:center;" class="welcome"> Find your products here</h1>
+    <table  class="TABLEAU"  border="0.5">
+        <tr style="border: 1px solid; padding: 5px; text-align:center; color:white;
+        ">
+        <td  style="font-size:16px; font:bold; color: gray;"> ID</td>
+        <td style="font-size:16px; font:bold; color: gray;">Product name</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Details of the product</td>
+        <td  style="font-size:16px; font:bold; color: gray;">How many product you want to buy</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Price for one product</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Total price</td>
+        <td style="font-size:16px; font:bold; color: gray;"> Photo of the product</td>
+        <td  style="font-size:16px; font:bold; color: gray;">Operatiion</td>
+            
+        </tr>
+        <tbody>
+            <!--<h5 style="color:yellow"> {{i.0}} </h5>  -->
+            {% csrf_token %}
+            {% for product in Les_produits%}
+            <tr>
+                <td style="background-color:black"> {{product.id}}  </td>
+                <td> {{product.name }} </td>
+                <td  style="background-color:black">  {{product.Details}}  </td>
+                <td> {{product.Quantity}}</td>
+                <td style="background-color:black"> {{product.Unit_Price}}  </td>
+                <td>  {{product.Total_price}} </td>
+                <td style="background-color:black"> 
+                {% if product.image %}
+                <img style="width:100px" src="{{ product.image.url }}">
+                {% endif %}
+             </td>
+                <td> 
+                <a style="padding: 8px auto; margin:auto; font-size:20px; border-radius:5px;
+                background-color:green; color:black; " href= "{% url 'pages:buyProduct' %}"  style="color: red">Buy product <a/>      
+                <a style="padding: 8px auto; margin:auto; font-size:20px; border-radius:5px;
+                background-color:yellow; color:black; " href= "{% url 'pages:buyProduct' %}"  style="color: red">Add to wish list <a/>
+                {% if wishlist_message %} <p>{{ wishlist_message }}</p> {% endif %}
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+             
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+{%load static%}
+{% block 'content' %}
+<a style="color:yellow;border-radius:10px;background-color:green; font-size:25px;" href="{% url 'pages:home' %}">Home</a>
+<body style="background:black;"  class="sucess">
+<h1 style="color:aliceblue; text-align:center;">Thank you for your confidence!</h1>
+<h2 style="color:yellow; text-align:center;">Product Added successfully!!</h2>
+<a style="color:yellow;margin-left:40%; font-size:30px;" href="{% url 'pages:product' %}">Continue Purchasing</a>
+</body>
+{% endblock %}

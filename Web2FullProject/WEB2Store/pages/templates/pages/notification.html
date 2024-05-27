@@ -1,0 +1,6 @@
+{% block 'title' %}{{ post.title }}{% endblock %}
+{% block 'content' %}
+<a href="{% url 'pages:product' %}">Back</a>
+<h1>{{ post.created }}</h1>
+<h1>{{ post.message }}</h1>
+{% endblock %}
