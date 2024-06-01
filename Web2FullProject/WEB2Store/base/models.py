@@ -12,9 +12,7 @@ class Les_produits(models.Model):
     Total_price= models.IntegerField(default=0)
     image = models.ImageField(upload_to="pages\static\pages\img", null=True, blank=True)
     
-    def __str__(self):
-        return self.name
- 
+
  
 class WishlistItem(models.Model):
     product = models.ForeignKey(Les_produits, to_field='name', on_delete=models.CASCADE) 
@@ -48,4 +46,14 @@ class Notification(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) # Optional: Associate with user 
     
     def __str__(self): return f"{self.message} - {self.created}" 
+    
+''' def update_quantity(self, quantity_added):
+    self.current_quantity += quantity_added
+    self.save()
+    product = Les_produits.objects.get(id=post_id)
+    product.update_quantity(quantity_added)
+     
+    def __str__(self):
+        return self.name '''
+ 
     

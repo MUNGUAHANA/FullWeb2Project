@@ -85,6 +85,19 @@ def create_notification(sender, instance, created, **kwargs):
     if created: # Create a notification when a new product is saved
         Notification.objects.create( message=f"New product added: {instance.name}", ) 
        
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Les_produits, id=product_id)
+    # ... other view logic ...
+
+    if request.method == 'POST':
+        # Handle form submission:
+        new_quantity = int(request.POST.get('new_quantity'))  # Get the new quantity from the form
+        product.update_quantity(new_quantity)
+        # ... other logic after quantity update (e.g., redirect) ...
+
+    context = {'product': product}
+    return render(request, 'product_detail.html', context)
 ''' def incementFunct(Les_produits,Quantity,post_id, increment=True):
     instance=get_object_or_404(Les_produits,id=post_id)
     setattr(instance, Quantity, getattr(instance, Quantity) +(1 if increment))  '''   

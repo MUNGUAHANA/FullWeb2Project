@@ -24,5 +24,11 @@ margin-left: 450px;">
 {{ form.as_p }}
 <input type="submit" value="Add">
 </form>
+<form method="post">
+    {% csrf_token %}
+    <label for="new_quantity">New Quantity:</label>
+    <input type="number" name="new_quantity" id="new_quantity" required>
+    <button type="submit">Add Quantity</button>
+  </form>
 </body>
 {% endblock %}
